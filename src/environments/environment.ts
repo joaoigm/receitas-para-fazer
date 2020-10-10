@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  nova_receita_url: 'https://pequenacozinheira.azurewebsites.net/api/NovaReceita',
+  listar_receitas_url: 'https://pequenacozinheira.azurewebsites.net/api/ListarReceitas'
 };
 
 /*
