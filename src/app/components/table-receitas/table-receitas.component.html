@@ -5,28 +5,28 @@
       <th colspan="2">Post</th>
     </tr>
     <tr>
-      <th appCursorPointer>Nome</th>
-      <th appCursorPointer>Tipo</th>
-      <th appCursorPointer>Fit</th>
-      <th appCursorPointer>Vegan</th>
-      <th appCursorPointer>Testado</th>
-      <th appCursorPointer>Fonte</th>
-      <th appCursorPointer>Titulo</th>
-      <th appCursorPointer>Status</th>
+      <th appCursorPointer class="bg-recipe">Nome</th>
+      <th appCursorPointer class="bg-recipe">Tipo</th>
+      <th appCursorPointer class="bg-recipe">Fit</th>
+      <th appCursorPointer class="bg-recipe">Vegan</th>
+      <th appCursorPointer class="bg-recipe">Testado</th>
+      <th appCursorPointer class="bg-recipe">Fonte</th>
+      <th appCursorPointer class="bg-post">Titulo</th>
+      <th appCursorPointer class="bg-post">Status</th>
     </tr>
   </thead>
   <tbody>
     <ng-container *ngIf="receitas.length > 0" >
       <ng-container *ngFor="let receita of receitas">
         <tr>
-          <td>{{ receita.nome }}</td>
-          <td>{{ receita.tipo }}</td>
-          <td>{{ receita.fit ? 'Sim' : 'Não' }}</td>
-          <td>{{ receita.vegan ? 'Sim' : 'Não' }}</td>
-          <td>{{ receita.testada }}</td>
-          <td>{{ receita.fonte }}</td>
-          <td>{{ receita.post.titulo }}</td>
-          <td>{{ receita.post.status }}</td>
+          <td class="bg-recipe">{{ receita.nome }}</td>
+          <td class="bg-recipe">{{ receita.tipo }}</td>
+          <td class="bg-recipe">{{ receita.fit ? 'Sim' : 'Não' }}</td>
+          <td class="bg-recipe">{{ receita.vegan ? 'Sim' : 'Não' }}</td>
+          <td class="bg-recipe">{{ receita.testada }}</td>
+          <td class="bg-recipe">{{ receita.fonte }}</td>
+          <td class="bg-post">{{ receita.post.titulo }}</td>
+          <td class="bg-post">{{ receita.post.status }}</td>
         </tr>
       </ng-container>
     </ng-container>
