@@ -9,9 +9,8 @@ export class EventsService {
 
   constructor() { }
 
-  public emitSortEvent(column): void {
-    console.log(column);
-    this.sortEvent.emit(column);
+  public emitSortEvent(column, reverse: boolean): void {
+    this.sortEvent.emit({column, reverse});
   }
 
   public getSortEvent(): EventEmitter<any> {

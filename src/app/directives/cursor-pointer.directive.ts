@@ -1,4 +1,4 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { EventsService } from '../services/events.service';
 
 @Directive({
@@ -6,12 +6,19 @@ import { EventsService } from '../services/events.service';
 })
 export class CursorPointerDirective {
 
-  constructor(private events: EventsService, private el: ElementRef) {
-    el.nativeElement.style.cursor = 'pointer';
+  reverse = false;
+
+  constructor(
+    private events: EventsService,
+    private el: ElementRef,
+    renderer: Renderer2) {
+    renderer.setStyle(el.nativeElement, 'cursor', 'pointer');
+
   }
 
   @HostListener('click') onClick(): void {
-    this.events.emitSortEvent(this.el.nativeElement.text);
+    this.events.emitSortEvent(this.el.nativeElement.innerText, this.reverse);
+    this.reverse = !this.reverse;
   }
 
 }
