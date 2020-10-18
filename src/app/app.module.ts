@@ -5,19 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReceitasService } from './services/receitas.service';
-import { TableReceitasComponent } from './components/table-receitas/table-receitas.component';
 import { CursorPointerDirective } from './directives/cursor-pointer.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableReceitasComponent,
-    CursorPointerDirective
+    CursorPointerDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     ReceitasService
