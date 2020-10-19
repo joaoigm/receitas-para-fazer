@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AdicionarReceitaRoutingModule } from './adicionar-receita-routing.module';
 import { AdicionarReceitaComponent } from './adicionar-receita.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,10 @@ import { AdicionarReceitaComponent } from './adicionar-receita.component';
   ],
   imports: [
     CommonModule,
-    AdicionarReceitaRoutingModule
+    FormsModule
+  ],
+  exports: [
+    AdicionarReceitaComponent
   ]
 })
 export class AdicionarReceitaModule { }

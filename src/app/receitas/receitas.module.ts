@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { ReceitasRoutingModule } from './receitas-routing.module';
 import { ReceitasComponent } from './receitas.component';
 import { TableReceitasModule } from '../components/table-receitas/table-receitas.module';
+import { AdicionarReceitaModule } from '../components/adicionar-receita/adicionar-receita.module';
+import { AppModule } from '../app.module';
 
 
 
@@ -14,7 +16,8 @@ import { TableReceitasModule } from '../components/table-receitas/table-receitas
   imports: [
     CommonModule,
     ReceitasRoutingModule,
-    TableReceitasModule
+    TableReceitasModule,
+    AdicionarReceitaModule
   ]
 })
 export class ReceitasModule { }

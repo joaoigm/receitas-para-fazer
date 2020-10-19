@@ -6,6 +6,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 export class EventsService {
 
   private sortEvent = new EventEmitter();
+  private novaReceitaEvent = new EventEmitter();
 
   constructor() { }
 
@@ -13,7 +14,15 @@ export class EventsService {
     this.sortEvent.emit({column, reverse});
   }
 
+  public emitNovaReceitaEvent(): void {
+    this.novaReceitaEvent.emit();
+  }
+
   public getSortEvent(): EventEmitter<any> {
     return this.sortEvent;
+  }
+
+  public getNovaReceitaEvent(): EventEmitter<any> {
+    return this.novaReceitaEvent;
   }
 }

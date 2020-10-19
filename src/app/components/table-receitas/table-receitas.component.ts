@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
+import { Receita } from '../../models/receita';
 
 @Component({
   selector: 'app-table-receitas',
@@ -8,7 +9,7 @@ import { EventsService } from '../../services/events.service';
 })
 export class TableReceitasComponent implements OnInit {
 
-  @Input() receitas: any[];
+  @Input() receitas: Receita[];
   constructor(
     private eventsService: EventsService
   ) { }
@@ -20,7 +21,7 @@ export class TableReceitasComponent implements OnInit {
   }
 
   sort(column: string, reverse = false): void {
-    this.receitas = this.receitas.sort( (a: any, b: any) => {
+    this.receitas = this.receitas.sort( (a: Receita, b: Receita) => {
       let comparison = 0;
 
       switch (column) {
@@ -46,7 +47,7 @@ export class TableReceitasComponent implements OnInit {
     });
   }
 
-  private comparePostProperties(a: any, column: string, b: any, comparison: number, reverse = false): number {
+  private comparePostProperties(a: Receita, column: string, b: Receita, comparison: number, reverse = false): number {
     if (a.post[column] > b.post[column]) {
       comparison = reverse ? -1 : 1;
     }

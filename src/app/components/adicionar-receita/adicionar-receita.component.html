@@ -1,0 +1,66 @@
+<form #novaReceita="ngForm" (submit)="onSubmit(novaReceita)">
+  <table class="table table-bordered table-striped text-center mt-lg-5">
+    <thead>
+      <tr>
+        <th colspan="6">Receita</th>
+        <th colspan="2">Post</th>
+      </tr>
+      <tr>
+        <th class="bg-receita" appCursorPointer>Nome</th>
+        <th class="bg-receita" appCursorPointer>Tipo</th>
+        <th class="bg-receita" appCursorPointer>Fit</th>
+        <th class="bg-receita" appCursorPointer>Vegan</th>
+        <th class="bg-receita" appCursorPointer>Testada</th>
+        <th class="bg-receita" appCursorPointer>Fonte</th>
+        <th class="bg-post" appCursorPointer>Titulo</th>
+        <th class="bg-post" appCursorPointer>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="bg-receita">
+          <input type="text" placeholder="Nome da receita" class="form-control" name="nome" [(ngModel)]="receita.nome" required>
+        </td>
+        <td class="bg-receita">
+          <select class="form-control" name="tipo" [(ngModel)]="receita.tipo" required>
+            <option value="Salgado">Salgado</option>
+            <option value="Doce">Doce</option>
+          </select>
+        </td>
+        <td class="bg-receita">
+          <select class="form-control" name="fit" [(ngModel)]="receita.fit">
+            <option value="false">Não</option>
+            <option value="true">Sim</option>
+          </select>
+        </td>
+        <td class="bg-receita">
+          <select class="form-control" name="vegan" [(ngModel)]="receita.vegan">
+            <option value="false">Não</option>
+            <option value="true">Sim</option>
+          </select>
+        </td>
+        <td class="bg-receita">
+          <select class="form-control" name="testada" [(ngModel)]="receita.testada">
+            <option value="Aprovada">Aprovada</option>
+            <option value="Errado">Errado</option>
+          </select>
+        </td>
+        <td class="bg-receita">
+          <input type="text" placeholder="Fonte da receita" class="form-control" name="fonte" [(ngModel)]="receita.fonte" required>
+        </td>
+        <td class="bg-post">
+          <input type="text" placeholder="Título do Post" class="form-control" name="post.titulo" [(ngModel)]="receita.post.titulo" required>
+        </td>
+        <td class="bg-post">
+          <select class="form-control" name="post.status" [(ngModel)]="receita.post.status">
+            <option value="Em Construção">Em Construção</option>
+            <option value="Pronto - Não Postado">Pronto - Não Postado</option>
+            <option value="Postado">Postado</option>
+            <option value="Não Postar">Não Postar</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-success" type="submit">Adicionar</button>
+</form>

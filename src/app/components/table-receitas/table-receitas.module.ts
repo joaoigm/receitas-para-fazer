@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TableReceitasComponent } from './table-receitas.component';
+import { AppModule } from '../../app.module';
+import { MyDirectivesModule } from '../../directives/my-directives.module';
 
 
 
@@ -9,7 +11,8 @@ import { TableReceitasComponent } from './table-receitas.component';
     TableReceitasComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MyDirectivesModule
   ],
   exports: [
     TableReceitasComponent

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
+import { Receita } from '../models/receita';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,11 @@ export class ReceitasService {
   constructor(
     private http: HttpClient) { }
 
-    get(): Observable<any> {
-      return this.http.get<any>(this.listarReceitas);
+    get(): Observable<Receita[]> {
+      return this.http.get<Receita[]>(this.listarReceitas);
+    }
+
+    adicionar(receita: Receita): Observable<Receita> {
+      return this.http.post<Receita>(this.novaReceita, receita);
     }
 }
