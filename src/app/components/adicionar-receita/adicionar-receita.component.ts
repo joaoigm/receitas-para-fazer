@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 import { Receita } from '../../models/receita';
 import { ReceitasService } from '../../services/receitas.service';
 import { EventsService } from '../../services/events.service';
@@ -10,7 +11,8 @@ import { EventsService } from '../../services/events.service';
   styleUrls: ['./adicionar-receita.component.css']
 })
 export class AdicionarReceitaComponent implements OnInit {
-
+  circle = faCircleNotch;
+  submited = false;
   receita: Receita;
 
   constructor(
@@ -25,6 +27,7 @@ export class AdicionarReceitaComponent implements OnInit {
   onSubmit(form: NgForm): void {
     document.getElementsByTagName('form')[0].classList.add('was-validated');
     if (form.valid) {
+      this.submited = true;
       this.receitasService.adicionar(this.receita).subscribe(
         (data) => {
           console.log('Nova receita cadastrada');
@@ -33,7 +36,8 @@ export class AdicionarReceitaComponent implements OnInit {
           form.reset();
           document.getElementsByTagName('form')[0].classList.remove('was-validated');
         },
-        err => console.log(err)
+        err => console.log(err),
+        () => this.submited = false
       );
     }
   }

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   nova_receita_url: 'https://pequenacozinheira.azurewebsites.net/api/NovaReceita',
-  listar_receitas_url: 'https://pequenacozinheira.azurewebsites.net/api/ListarReceitas'
+  listar_receitas_url: 'https://pequenacozinheira.azurewebsites.net/api/ListarReceitas',
+  deletar_receitas_url: 'https://pequenacozinheira.azurewebsites.net/api/DeletarReceita'
 };
 
 /*

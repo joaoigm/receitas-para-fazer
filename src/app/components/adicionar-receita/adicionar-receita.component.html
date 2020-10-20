@@ -19,12 +19,13 @@
     <tbody>
       <tr>
         <td class="bg-receita">
-          <input type="text" placeholder="Nome da receita" class="form-control" name="nome" [(ngModel)]="receita.nome" required>
+          <input type="text" placeholder="Nome da receita" class="form-control" name="nome" [(ngModel)]="receita.nome">
         </td>
         <td class="bg-receita">
-          <select class="form-control" name="tipo" [(ngModel)]="receita.tipo" required>
+          <select class="form-control" name="tipo" [(ngModel)]="receita.tipo">
             <option value="Salgado">Salgado</option>
             <option value="Doce">Doce</option>
+            <option value="Bebida">Bebida</option>
           </select>
         </td>
         <td class="bg-receita">
@@ -46,10 +47,10 @@
           </select>
         </td>
         <td class="bg-receita">
-          <input type="text" placeholder="Fonte da receita" class="form-control" name="fonte" [(ngModel)]="receita.fonte" required>
+          <input type="text" placeholder="Fonte da receita" class="form-control" name="fonte" [(ngModel)]="receita.fonte">
         </td>
         <td class="bg-post">
-          <input type="text" placeholder="Título do Post" class="form-control" name="post.titulo" [(ngModel)]="receita.post.titulo" required>
+          <input type="text" placeholder="Título do Post" class="form-control" name="post.titulo" [(ngModel)]="receita.post.titulo">
         </td>
         <td class="bg-post">
           <select class="form-control" name="post.status" [(ngModel)]="receita.post.status">
@@ -62,5 +63,8 @@
       </tr>
     </tbody>
   </table>
-  <button class="btn btn-success" type="submit">Adicionar</button>
+  <button class="btn btn-success" type="submit" [disabled]="submited">
+    <fa-icon *ngIf="submited" class="fa fa-spin" [icon]="circle"></fa-icon> Adicionar
+  </button>
+  <!-- <app-upload-excel class="ml-3"></app-upload-excel> -->
 </form>

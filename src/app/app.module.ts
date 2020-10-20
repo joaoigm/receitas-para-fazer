@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReceitasService } from './services/receitas.service';
+import { EventsService } from './services/events.service';
+import { ExcelService } from './services/excel.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ReceitasService } from './services/receitas.service';
     HttpClientModule,
   ],
   providers: [
-    ReceitasService
+    ReceitasService,
+    EventsService,
+    ExcelService
   ],
   bootstrap: [AppComponent]
 })

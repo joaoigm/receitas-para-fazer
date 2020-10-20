@@ -11,6 +11,7 @@ export class ReceitasService {
 
   listarReceitas: string = environment.listar_receitas_url;
   novaReceita: string = environment.nova_receita_url;
+  deletarReceita: string = environment.deletar_receitas_url;
 
   constructor(
     private http: HttpClient) { }
@@ -21,5 +22,11 @@ export class ReceitasService {
 
     adicionar(receita: Receita): Observable<Receita> {
       return this.http.post<Receita>(this.novaReceita, receita);
+    }
+
+    deletar(receita: Receita): Observable<any> {
+      return this.http.request<Receita>('DELETE', this.deletarReceita, {
+        body: receita
+      });
     }
 }

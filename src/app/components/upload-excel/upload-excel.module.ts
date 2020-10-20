@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableReceitasComponent } from './table-receitas.component';
-import { MyDirectivesModule } from '../../directives/my-directives.module';
+import { UploadExcelComponent } from './upload-excel.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 
 
 @NgModule({
   declarations: [
-    TableReceitasComponent
+    UploadExcelComponent
   ],
   imports: [
     CommonModule,
-    MyDirectivesModule,
     FontAwesomeModule
   ],
   exports: [
-    TableReceitasComponent
+    UploadExcelComponent
   ]
 })
-export class TableReceitasModule { }
+export class UploadExcelModule { }

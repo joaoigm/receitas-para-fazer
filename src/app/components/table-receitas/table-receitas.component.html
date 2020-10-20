@@ -1,34 +1,49 @@
-<table class="table table-bordered table-striped text-center mt-lg-5">
-  <thead>
-    <tr>
-      <th colspan="6">Receita</th>
-      <th colspan="2">Post</th>
-    </tr>
-    <tr>
-      <th class="bg-receita" appCursorPointer>Nome</th>
-      <th class="bg-receita" appCursorPointer>Tipo</th>
-      <th class="bg-receita" appCursorPointer>Fit</th>
-      <th class="bg-receita" appCursorPointer>Vegan</th>
-      <th class="bg-receita" appCursorPointer>Testada</th>
-      <th class="bg-receita" appCursorPointer>Fonte</th>
-      <th class="bg-post" appCursorPointer>Titulo</th>
-      <th class="bg-post" appCursorPointer>Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <ng-container *ngIf="receitas.length > 0" >
-      <ng-container *ngFor="let receita of receitas">
-        <tr>
-          <td class="bg-receita" >{{ receita.nome }}</td>
-          <td class="bg-receita" >{{ receita.tipo }}</td>
-          <td class="bg-receita" >{{ receita.fit ? 'Sim' : 'Não' }}</td>
-          <td class="bg-receita" >{{ receita.vegan ? 'Sim' : 'Não' }}</td>
-          <td class="bg-receita" >{{ receita.testada }}</td>
-          <td class="bg-receita" >{{ receita.fonte }}</td>
-          <td class="bg-post" >{{ receita.post.titulo }}</td>
-          <td class="bg-post" >{{ receita.post.status }}</td>
-        </tr>
+<div class="col-12">
+  <table class="table table-sm text-center mt-lg-5">
+    <thead>
+      <tr>
+        <th colspan="6">Receita</th>
+        <th colspan="2">Post</th>
+        <th></th>
+      </tr>
+      <tr>
+        <th class="bg-receita" appCursorPointer>Nome</th>
+        <th class="bg-receita" appCursorPointer>Tipo</th>
+        <th class="bg-receita" appCursorPointer>Fit</th>
+        <th class="bg-receita" appCursorPointer>Vegan</th>
+        <th class="bg-receita" appCursorPointer>Testada</th>
+        <th class="bg-receita" appCursorPointer>Fonte</th>
+        <th class="bg-post" appCursorPointer>Titulo</th>
+        <th class="bg-post" appCursorPointer>Status</th>
+        <th class="bg-post"></th>
+        <!-- <th class="bg-post"></th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="receitas.length > 0" >
+        <ng-container *ngFor="let receita of receitas, let i = index">
+          <tr>
+            <td class="bg-receita" >{{ receita.nome }}</td>
+            <td class="bg-receita" >{{ receita.tipo }}</td>
+            <td class="bg-receita" >{{ receita.fit ? 'Sim' : 'Não' }}</td>
+            <td class="bg-receita" >{{ receita.vegan ? 'Sim' : 'Não' }}</td>
+            <td class="bg-receita" >{{ receita.testada }}</td>
+            <td class="bg-receita" >{{ receita.fonte }}</td>
+            <td class="bg-post" >{{ receita.post.titulo }}</td>
+            <td class="bg-post" >{{ receita.post.status }}</td>
+            <td class="bg-post">
+              <button type="button" class="btn btn-danger" (click)="delete(receita)">
+                <fa-icon [icon]="iconDelete"></fa-icon>
+              </button>
+            </td>
+            <!-- <td class="bg-post">
+              <button type="button" class="btn btn-warning">
+                <fa-icon [icon]="iconEdit"></fa-icon>
+              </button>
+            </td> -->
+          </tr>
+        </ng-container>
       </ng-container>
-    </ng-container>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

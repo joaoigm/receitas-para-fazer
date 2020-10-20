@@ -1,0 +1,7 @@
+<button type="button" class="btn btn-primary">
+    <fa-icon [icon]="faFileExcel"></fa-icon>
+    <label for="excel" class="ml-1">
+        Upload
+    </label>
+    <input type="file" name="excel" id="excel" (change)="onUpload($event)" accept=".xlsx">
+</button>
